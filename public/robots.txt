@@ -1,0 +1,5 @@
+# Cosmic Labs SEO Configuration
+User-agent: *
+Allow: /
+
+Sitemap: https://cosmiclabs.co/sitemap.xml

@@ -1,0 +1,6 @@
+{
+  "name": "Cosmic Labs",
+  "description": "Premium corporate website for Cosmic Labs, delivering professional digital solutions, connectivity, IT infrastructure, and creative studio services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
