@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Sparkles, Building2, School, GraduationCap, Shield, Laptop, Milestone } from "lucide-react";
+import { Building2, School, GraduationCap, Shield, Laptop, Milestone } from "lucide-react";
 
 interface TrustedByProps {
   darkMode: boolean;
@@ -14,7 +14,6 @@ export default function TrustedBy({ darkMode }: TrustedByProps) {
   const [campaignsCount, setCampaignsCount] = useState(0);
 
   useEffect(() => {
-    // Staggered counters increment simulation
     const duration = 1500;
     const steps = 30;
     const stepTime = duration / steps;
@@ -37,12 +36,12 @@ export default function TrustedBy({ darkMode }: TrustedByProps) {
   }, []);
 
   const trustLogos = [
-    { name: "SMAN 4 Jakarta", type: "School Portal", icon: School },
-    { name: "Apex Wealth", type: "FinTech App", icon: Building2 },
-    { name: "Sunda Government", type: "Public Service", icon: Shield },
-    { name: "Nexa Health", type: "SaaS Platform", icon: Laptop },
-    { name: "University of Java", type: "Edu Platform", icon: GraduationCap },
-    { name: "Velo Logistics", type: "UMKM Retailer", icon: Milestone }
+    { name: "SMAN 4 Jakarta", type: "Portal Sekolah", icon: School },
+    { name: "Apex Wealth", type: "Aplikasi FinTech", icon: Building2 },
+    { name: "Pemda Sunda", type: "Layanan Publik", icon: Shield },
+    { name: "Nexa Health", type: "Platform SaaS", icon: Laptop },
+    { name: "Universitas Jawa", type: "Platform Edukasi", icon: GraduationCap },
+    { name: "Velo Logistik", type: "Ritel UMKM", icon: Milestone }
   ];
 
   return (
@@ -59,7 +58,7 @@ export default function TrustedBy({ darkMode }: TrustedByProps) {
         {/* LOGO SLIDER */}
         <div className="space-y-6">
           <p className="text-center text-[10px] sm:text-xs font-mono font-bold tracking-widest text-slate-500 uppercase">
-            TRUSTED BY INSTITUTIONS, SCHOOLS, AND GOVERNMENTS
+            DIPERCAYA OLEH INSTITUSI, SEKOLAH, DAN PEMERINTAHAN
           </p>
 
           {/* Logo container slider */}
@@ -101,7 +100,7 @@ export default function TrustedBy({ darkMode }: TrustedByProps) {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 sm:gap-4 pt-10 border-t border-slate-500/10 text-center">
           
           <div className="space-y-1">
-            <span className="text-[10px] text-slate-500 font-mono block uppercase">Projects Completed</span>
+            <span className="text-[10px] text-slate-500 font-mono block uppercase">Proyek Selesai</span>
             <span className={`text-3xl sm:text-4xl font-black font-display tracking-tight block ${darkMode ? "text-white" : "text-slate-950"}`}>
               {projectsCount}+
             </span>
@@ -109,35 +108,35 @@ export default function TrustedBy({ darkMode }: TrustedByProps) {
           </div>
 
           <div className="space-y-1">
-            <span className="text-[10px] text-slate-500 font-mono block uppercase">Happy Clients</span>
+            <span className="text-[10px] text-slate-500 font-mono block uppercase">Klien Puas</span>
             <span className={`text-3xl sm:text-4xl font-black font-display tracking-tight block ${darkMode ? "text-white" : "text-slate-950"}`}>
               {clientsCount}+
             </span>
-            <span className="text-[9px] text-blue-500 font-mono">Institutions & Retail</span>
+            <span className="text-[9px] text-blue-500 font-mono">Institusi & Bisnis</span>
           </div>
 
           <div className="space-y-1">
-            <span className="text-[10px] text-slate-500 font-mono block uppercase">Broadband Subs</span>
+            <span className="text-[10px] text-slate-500 font-mono block uppercase">Pelanggan Broadband</span>
             <span className={`text-3xl sm:text-4xl font-black font-display tracking-tight block ${darkMode ? "text-white" : "text-slate-950"}`}>
               {subscribersCount}+
             </span>
-            <span className="text-[9px] text-blue-500 font-mono">Symmetrical Fiber Lines</span>
+            <span className="text-[9px] text-blue-500 font-mono">Kabel Fiber Simetris</span>
           </div>
 
           <div className="space-y-1">
-            <span className="text-[10px] text-slate-500 font-mono block uppercase">IT Deployments</span>
+            <span className="text-[10px] text-slate-500 font-mono block uppercase">Implementasi IT</span>
             <span className={`text-3xl sm:text-4xl font-black font-display tracking-tight block ${darkMode ? "text-white" : "text-slate-950"}`}>
               {deploymentsCount}+
             </span>
-            <span className="text-[9px] text-blue-500 font-mono">Proxmox Active VMs</span>
+            <span className="text-[9px] text-blue-500 font-mono">VM Proxmox Aktif</span>
           </div>
 
           <div className="space-y-1 col-span-2 md:col-span-1">
-            <span className="text-[10px] text-slate-500 font-mono block uppercase">Creative Campaigns</span>
+            <span className="text-[10px] text-slate-500 font-mono block uppercase">Kampanye Kreatif</span>
             <span className={`text-3xl sm:text-4xl font-black font-display tracking-tight block ${darkMode ? "text-white" : "text-slate-950"}`}>
               {campaignsCount}+
             </span>
-            <span className="text-[9px] text-blue-500 font-mono">Video, Brand Books & Lottie</span>
+            <span className="text-[9px] text-blue-500 font-mono">Video, Brandbook & Lottie</span>
           </div>
 
         </div>

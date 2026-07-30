@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TIMELINE } from "../data";
-import { Eye, Target, Compass, Sparkles, Award, Shield, Zap } from "lucide-react";
+import { Eye, Target, Sparkles, Award, Shield, Zap } from "lucide-react";
 
 interface AboutProps {
   darkMode: boolean;
@@ -11,22 +11,22 @@ export default function About({ darkMode }: AboutProps) {
 
   const coreValues = [
     {
-      title: "Technical Excellence",
-      desc: "We write clean, semantic code and build carrier-grade connectivity pipelines with zero compromises.",
+      title: "Keunggulan Teknis",
+      desc: "Kami menulis kode yang bersih, semantik, dan membangun saluran konektivitas terdedikasi tanpa kompromi.",
       icon: Zap,
       color: "text-blue-500",
       bgColor: "bg-blue-500/10"
     },
     {
-      title: "Unyielding Reliability",
-      desc: "Our virtualized server configurations and backup infrastructure guarantee high availability for institutions.",
+      title: "Keandalan Tinggi",
+      desc: "Konfigurasi server ter-virtualisasi dan sistem pencadangan terstruktur menjamin ketersediaan tinggi untuk institusi.",
       icon: Shield,
       color: "text-emerald-500",
       bgColor: "bg-emerald-500/10"
     },
     {
-      title: "Creative Mastery",
-      desc: "Our award-winning designers craft visual assets, Figma design tokens, and videos that capture brand focus.",
+      title: "Penguasaan Kreatif",
+      desc: "Desainer berbakat kami merancang aset visual, token desain Figma, dan video profil yang memikat perhatian publik.",
       icon: Award,
       color: "text-pink-500",
       bgColor: "bg-pink-500/10"
@@ -48,11 +48,11 @@ export default function About({ darkMode }: AboutProps) {
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-blue-500 bg-blue-500/10 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>COMPANY ARCHITECTURE</span>
+            <span>ARSITEKTUR PERUSAHAAN</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.2]">
-            Fusing Technology and Creativity <br className="hidden sm:inline" />
-            To Forge the Digital Frontier
+            Menggabungkan Teknologi & Kreativitas <br className="hidden sm:inline" />
+            Untuk Membangun Ekosistem Digital Masa Depan
           </h2>
           <div className="h-1.5 w-16 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full mx-auto mt-5" />
         </div>
@@ -64,13 +64,13 @@ export default function About({ darkMode }: AboutProps) {
             <h3 className={`font-display font-extrabold text-2xl sm:text-3xl ${
               darkMode ? "text-white" : "text-slate-950"
             }`}>
-              Accelerating Digital Transformation
+              Akselerasi Transformasi Digital Anda
             </h3>
             <p className={`text-base sm:text-lg leading-relaxed ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
-              Cosmic Labs is a one-stop technology and creative solutions company that helps businesses, schools, government institutions, and organizations accelerate digital transformation. We combine high-speed connectivity, robust IT infrastructure, modern custom software development, and state-of-the-art creative media to deliver reliable, long-lasting digital solutions.
+              Cosmic Labs adalah perusahaan solusi teknologi dan kreatif terpadu yang membantu bisnis, sekolah, instansi pemerintah, dan organisasi mengakselerasi transformasi digital. Kami menggabungkan konektivitas internet dedicated berkecepatan tinggi, infrastruktur IT yang tangguh, pengembangan aplikasi web kustom modern, serta media kreatif mutakhir untuk memberikan solusi yang andal dan berkelanjutan.
             </p>
             <p className={`text-base leading-relaxed ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-              Whether building accessible government platforms, wiring campus-wide fiber networks, cloud virtualizing enterprise server hubs, or designing digital asset books, our multi-division squad engineers each milestone with absolute precision.
+              Baik dalam membangun platform pelayanan publik yang inklusif, menggelar jaringan fiber optik skala kampus, memvirtualisasikan server korporat, maupun merancang identitas merek visual, tim multidisiplin kami siap merancang setiap detail dengan presisi mutlak.
             </p>
           </div>
 
@@ -91,9 +91,9 @@ export default function About({ darkMode }: AboutProps) {
                     <Eye className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className={`font-display font-bold text-lg ${darkMode ? "text-white" : "text-slate-900"}`}>Our Vision</h4>
+                    <h4 className={`font-display font-bold text-lg ${darkMode ? "text-white" : "text-slate-900"}`}>Visi Kami</h4>
                     <p className={`text-sm mt-1 leading-relaxed ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
-                      To be the world’s most trusted partner in technological innovation and creative expression—bridging complex physical backbones with simple user interfaces.
+                      Menjadi mitra terpercaya dalam inovasi teknologi dan ekspresi kreatif—menghubungkan tulang punggung fisik yang kompleks dengan antarmuka pengguna yang intuitif dan elegan.
                     </p>
                   </div>
                 </div>
@@ -104,9 +104,9 @@ export default function About({ darkMode }: AboutProps) {
                     <Target className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className={`font-display font-bold text-lg ${darkMode ? "text-white" : "text-slate-900"}`}>Our Mission</h4>
+                    <h4 className={`font-display font-bold text-lg ${darkMode ? "text-white" : "text-slate-900"}`}>Misi Kami</h4>
                     <p className={`text-sm mt-1 leading-relaxed ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
-                      To deliver secure, accessible, and high-performance digital ecosystems through meticulous engineering, symmetrical connectivity, secure IT clusters, and high-impact visual design.
+                      Menghadirkan ekosistem digital yang aman, mudah diakses, dan berkinerja tinggi melalui rekayasa software presisi, konektivitas fiber simetris, cluster IT aman, serta desain visual berdampak tinggi.
                     </p>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export default function About({ darkMode }: AboutProps) {
           <h3 className={`font-display font-extrabold text-2xl text-center mb-8 ${
             darkMode ? "text-white" : "text-slate-900"
           }`}>
-            Our Operating Principles
+            Prinsip Utama Operasional
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {coreValues.map((val) => {
@@ -154,9 +154,9 @@ export default function About({ darkMode }: AboutProps) {
         <div className="space-y-8">
           <div className="text-center">
             <h3 className={`font-display font-extrabold text-2xl ${darkMode ? "text-white" : "text-slate-900"}`}>
-              The Cosmic Progression
+              Jejak Langkah & Perkembangan Cosmic
             </h3>
-            <p className="text-sm text-slate-400 font-mono mt-1">CLICK A NODE TO NAVIGATE OUR HISTORY</p>
+            <p className="text-sm text-slate-400 font-mono mt-1">KLIK NODE UNTUK MELIHAT RIWAYAT KAMI</p>
           </div>
 
           <div className={`p-6 sm:p-10 rounded-3xl border relative overflow-hidden ${
@@ -207,7 +207,7 @@ export default function About({ darkMode }: AboutProps) {
                         {milestone.title}
                       </div>
                       <div className="text-[11px] text-slate-400 font-mono mt-0.5 md:hidden">
-                        Click to view details
+                        Klik untuk melihat rincian
                       </div>
                     </div>
                   </button>
@@ -223,10 +223,10 @@ export default function About({ darkMode }: AboutProps) {
             }`}>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 border-b border-slate-500/10 pb-3 gap-2">
                 <div className="flex items-center space-x-2">
-                  <span className="text-xl font-bold font-mono text-blue-500">YEAR {TIMELINE[selectedMilestone].year}</span>
-                  <span className="text-xs px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 font-mono">Verified Milestone</span>
+                  <span className="text-xl font-bold font-mono text-blue-500">TAHUN {TIMELINE[selectedMilestone].year}</span>
+                  <span className="text-xs px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 font-mono">Pencapaian Terverifikasi</span>
                 </div>
-                <span className="text-xs text-slate-400 font-mono">COSMIC_LABS_HIST_REG_{selectedMilestone + 1}</span>
+                <span className="text-xs text-slate-400 font-mono">COSMIC_HIST_REG_{selectedMilestone + 1}</span>
               </div>
               <h4 className={`font-display font-extrabold text-lg mb-2 ${darkMode ? "text-white" : "text-slate-900"}`}>
                 {TIMELINE[selectedMilestone].title}

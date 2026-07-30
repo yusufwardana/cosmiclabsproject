@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sparkles, Mail, Check, ArrowUpRight, ArrowUp } from "lucide-react";
+import { Sparkles, Check, ArrowUp, Terminal } from "lucide-react";
 
 interface FooterProps {
   darkMode: boolean;
@@ -24,44 +24,45 @@ export default function Footer({ darkMode, onNavigate }: FooterProps) {
   return (
     <footer
       id="main-footer"
-      className={`pt-16 pb-8 border-t transition-colors duration-300 ${
+      className={`pt-16 pb-8 border-t transition-colors duration-200 ${
         darkMode 
-          ? "bg-slate-950 border-white/5 text-slate-400" 
-          : "bg-slate-100 border-slate-200 text-slate-600"
+          ? "bg-[oklch(0.12_0.015_258)] border-slate-800 text-slate-400" 
+          : "bg-[oklch(0.985_0.004_250)] border-slate-200 text-slate-600"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Footer grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 border-b border-slate-500/10 pb-12 mb-8">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 border-b border-slate-800/40 pb-12 mb-8">
           
-          {/* Col 1: Cosmic overview (4 columns lg) */}
+          {/* Brand Overview */}
           <div className="lg:col-span-4 space-y-4">
             <div 
-              className="flex items-center space-x-2 cursor-pointer group"
+              className="flex items-center space-x-2.5 cursor-pointer group"
               onClick={() => onNavigate("hero")}
             >
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 via-indigo-600 to-pink-500 flex items-center justify-center shadow">
-                <Sparkles className="w-4 h-4 text-white" />
+              <div className="w-7 h-7 rounded bg-blue-600 text-white flex items-center justify-center font-mono font-bold text-xs">
+                <Terminal className="w-3.5 h-3.5" />
               </div>
-              <span className="font-display font-bold text-base tracking-tight text-gradient-cosmic">
+              <span className={`font-display font-bold text-base tracking-tight ${
+                darkMode ? "text-white" : "text-slate-900"
+              }`}>
                 COSMIC LABS
               </span>
             </div>
 
             <p className="text-xs leading-relaxed max-w-sm">
-              Cosmic Labs is a one-stop technology and creative solutions partner accelerating digital transformation across schools, public departments, local startups, and corporate conglomerates.
+              Cosmic Labs adalah perusahaan teknologi dan solusi kreatif terpercaya yang menyediakan aplikasi web kelas industri, internet fiber optik simetris 1:1, infrastruktur cloud Proxmox, serta layanan studio media branding.
             </p>
 
-            {/* Social channels mock */}
-            <div className="flex items-center space-x-3.5 pt-2">
-              {["Twitter", "LinkedIn", "Instagram", "GitHub"].map((social) => (
+            <div className="flex items-center space-x-3 text-xs font-mono pt-1">
+              {["Twitter", "LinkedIn", "GitHub"].map((social) => (
                 <a
                   key={social}
                   href={`https://${social.toLowerCase()}.com`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs hover:text-blue-500 font-mono transition-colors"
+                  className="hover:text-blue-500 transition-colors"
                 >
                   {social}
                 </a>
@@ -69,43 +70,43 @@ export default function Footer({ darkMode, onNavigate }: FooterProps) {
             </div>
           </div>
 
-          {/* Col 2: Services Quick lists (2.5 columns lg) */}
-          <div className="lg:col-span-3 space-y-4 text-xs font-mono">
+          {/* Vertical Divisions Links */}
+          <div className="lg:col-span-3 space-y-3 font-mono text-xs">
             <h4 className={`font-display font-bold text-xs uppercase tracking-wider ${darkMode ? "text-white" : "text-slate-900"}`}>
-              Core Divisions
+              DIVISI OPERASIONAL
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {[
-                { name: "Digital Solutions", id: "divisions" },
-                { name: "Connectivity Ops", id: "divisions" },
-                { name: "IT Infrastructure", id: "divisions" },
-                { name: "Creative Studio", id: "divisions" }
-              ].map((srv, idx) => (
+                "Pengembangan Web & Aplikasi",
+                "Internet Fiber Optik Dedicated",
+                "Infrastruktur Cloud & Server",
+                "Studio Media Kreatif & Branding"
+              ].map((name, idx) => (
                 <li key={idx}>
                   <button 
-                    onClick={() => onNavigate(srv.id)}
+                    onClick={() => onNavigate("divisions")}
                     className="hover:text-blue-500 transition-colors cursor-pointer text-left"
                   >
-                    {srv.name}
+                    {name}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 3: Quick Navigation (2 columns lg) */}
-          <div className="lg:col-span-2 space-y-4 text-xs font-mono">
+          {/* Quick Navigation Links */}
+          <div className="lg:col-span-2 space-y-3 font-mono text-xs">
             <h4 className={`font-display font-bold text-xs uppercase tracking-wider ${darkMode ? "text-white" : "text-slate-900"}`}>
-              Company
+              NAVIGASI
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {[
-                { name: "About Story", id: "about" },
-                { name: "Divisions", id: "divisions" },
-                { name: "Interactive Estimator", id: "estimator" },
-                { name: "Verified Portfolio", id: "portfolio" },
-                { name: "Core Why Us", id: "why-choose" },
-                { name: "Active Blog Insights", id: "blog" }
+                { name: "Tentang Kami", id: "about" },
+                { name: "Divisi Layanan", id: "divisions" },
+                { name: "Kalkulator Biaya", id: "estimator" },
+                { name: "Portofolio", id: "portfolio" },
+                { name: "Proses Kerja", id: "process" },
+                { name: "Artikel & Wawasan", id: "blog" }
               ].map((link, idx) => (
                 <li key={idx}>
                   <button 
@@ -119,74 +120,66 @@ export default function Footer({ darkMode, onNavigate }: FooterProps) {
             </ul>
           </div>
 
-          {/* Col 4: Symmetrical newsletter subscription (3.5 columns lg) */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Newsletter Form */}
+          <div className="lg:col-span-3 space-y-3">
             <h4 className={`font-display font-bold text-xs uppercase tracking-wider ${darkMode ? "text-white" : "text-slate-900"}`}>
-              Cosmic Newsletter
+              BULETIN TEKNOLOGI
             </h4>
             <p className="text-xs leading-relaxed">
-              Get modern web performance tips, Mikrotik routing scripts, and creative assets directly.
+              Dapatkan pembaruan rilis teknis, artikel riset, serta analisis performa web langsung di email Anda.
             </p>
 
             {subscribed ? (
-              <div id="newsletter-success" className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center space-x-2 text-[11px] text-emerald-500">
-                <Check className="w-4 h-4 shrink-0" />
-                <span>Subscribed successfully!</span>
+              <div id="newsletter-success" className="p-2.5 rounded bg-emerald-500/10 border border-emerald-500/30 flex items-center space-x-2 text-xs font-mono text-emerald-400">
+                <Check className="w-3.5 h-3.5 shrink-0" />
+                <span>Terima kasih telah berlangganan!</span>
               </div>
             ) : (
-              <form id="newsletter-footer-form" onSubmit={handleSubscribe} className="space-y-2">
-                <div className="relative">
-                  <input
-                    id="newsletter-email-input"
-                    type="email"
-                    required
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className={`w-full p-3 pr-10 text-xs rounded-xl border outline-none transition-all ${
-                      darkMode 
-                        ? "bg-slate-900 border-white/5 focus:border-blue-500 text-white" 
-                        : "bg-slate-50 border-slate-200 focus:border-blue-500 text-slate-800"
-                    }`}
-                  />
-                  <button
-                    id="newsletter-submit-btn"
-                    type="submit"
-                    className="absolute right-1.5 top-1.5 p-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-all cursor-pointer"
-                  >
-                    <Check className="w-4 h-4" />
-                  </button>
-                </div>
+              <form id="newsletter-footer-form" onSubmit={handleSubscribe} className="flex space-x-2">
+                <input
+                  id="newsletter-email-input"
+                  type="email"
+                  required
+                  placeholder="nama@perusahaan.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={`flex-1 p-2 text-xs font-mono rounded border outline-none ${
+                    darkMode ? "bg-slate-950 border-slate-800 text-white" : "bg-white border-slate-300 text-slate-900"
+                  }`}
+                />
+                <button
+                  id="newsletter-submit-btn"
+                  type="submit"
+                  className="hallmark-btn-primary text-xs py-2 px-3"
+                >
+                  Daftar
+                </button>
               </form>
             )}
           </div>
 
         </div>
 
-        {/* Sub-Footer details */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono border-t border-slate-500/5 pt-8">
-          
-          <div className="space-y-1 text-center sm:text-left">
-            <span>© 2026 Cosmic Labs. All Rights Reserved.</span>
-            <span className="block text-[9px] text-slate-500">Structured carrier lines, virtual infrastructure, and modular layouts compliant.</span>
+        {/* Hallmark Sub-Footer Timestamp & Copyright */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono border-t border-slate-800/30 pt-6">
+          <div className="space-y-0.5 text-center sm:text-left">
+            <span>© 2026 Cosmic Labs. Hak Cipta Dilindungi Undang-Undang.</span>
+            <span className="block text-slate-500">Membangun Masa Depan dengan Teknologi & Kreativitas</span>
           </div>
 
           <div className="flex items-center space-x-4">
-            <a href="#privacy" className="hover:text-blue-500 transition-colors">Privacy Policy</a>
-            <span>•</span>
-            <a href="#terms" className="hover:text-blue-500 transition-colors">Terms of Use</a>
+            <span className="text-slate-500">Jaminan Uptime SLA 99.9%</span>
             <span>•</span>
             <button 
               onClick={scrollToTop}
-              className={`p-2.5 rounded-full transition-all border cursor-pointer ${
-                darkMode ? "bg-slate-900 border-white/5 text-white hover:bg-slate-800" : "bg-white border-slate-200 text-slate-700 hover:bg-slate-50"
+              className={`p-2 rounded border transition-all cursor-pointer ${
+                darkMode ? "bg-slate-900 border-slate-800 text-slate-300 hover:text-white" : "bg-white border-slate-300 text-slate-700"
               }`}
-              title="Back to Top"
+              title="Kembali ke Atas"
             >
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
           </div>
-
         </div>
 
       </div>

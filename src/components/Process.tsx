@@ -52,13 +52,13 @@ export default function Process({ darkMode }: ProcessProps) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-indigo-500 bg-indigo-500/10 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>OPERATIONAL PIPELINE</span>
+            <span>PIPA OPERASIONAL</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight">
-            Our Symmetrical Delivery Process
+            Proses Kerja Simetris & Terstruktur Kami
           </h2>
           <p className={`mt-3 text-sm sm:text-base ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-            We divide our project lifecycles into seven clear milestones, keeping you updated with transparent sprint reviews from kick-off to long-term monitoring.
+            Kami membagi siklus hidup proyek menjadi tujuh tahap terstruktur dengan laporan rutin yang transparan mulai dari konsultasi hingga pemantauan jangka panjang.
           </p>
         </div>
 
@@ -117,9 +117,9 @@ export default function Process({ darkMode }: ProcessProps) {
               {/* Step indicator badge */}
               <div className="flex items-center space-x-2">
                 <span className="text-xs font-mono px-3 py-1 rounded bg-blue-500/15 text-blue-400 font-bold uppercase">
-                  PHASE {currentStepData.number} OF 7
+                  TAHAP {currentStepData.number} DARI 7
                 </span>
-                <span className="text-xs text-slate-400 font-mono">CODE: CSMC_PROC_PH_{currentStepData.number}</span>
+                <span className="text-xs text-slate-400 font-mono">KODE: CSMC_PROC_PH_{currentStepData.number}</span>
               </div>
 
               {/* Title & Description */}
@@ -134,7 +134,7 @@ export default function Process({ darkMode }: ProcessProps) {
 
               {/* Checklist bullets */}
               <div className="space-y-2.5 pt-4 border-t border-slate-500/10">
-                <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-400">Phase deliverables checklist</h4>
+                <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-400">Daftar Hasil & Target Tahapan</h4>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {currentStepData.details.map((item, idx) => (
@@ -170,12 +170,12 @@ export default function Process({ darkMode }: ProcessProps) {
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">PHASE OBJECTIVE</span>
+                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">TARGET TAHAPAN</span>
                   <h4 className={`font-display font-extrabold text-base ${darkMode ? "text-white" : "text-slate-900"}`}>
-                    {currentStepData.title} Active
+                    {currentStepData.title} Aktif
                   </h4>
                   <p className="text-xs text-slate-500 leading-relaxed max-w-[220px]">
-                    Continuous collaboration and high-end quality gating.
+                    Kolaborasi berkelanjutan dan penjaminan mutu kualitas tanpa kompromi.
                   </p>
                 </div>
               </div>

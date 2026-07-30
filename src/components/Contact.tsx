@@ -46,8 +46,8 @@ export default function Contact({ darkMode }: ContactProps) {
   };
 
   const handleWhatsappRedirect = () => {
-    const message = encodeURIComponent("Hello Cosmic Labs, I'd like to consult on a tech and creative transformation project.");
-    window.open(`https://wa.me/1234567890?text=${message}`, "_blank");
+    const message = encodeURIComponent("Halo Cosmic Labs, saya ingin berkonsultasi mengenai proyek teknologi dan kreatif kami.");
+    window.open(`https://wa.me/6281234567890?text=${message}`, "_blank");
   };
 
   return (
@@ -63,13 +63,13 @@ export default function Contact({ darkMode }: ContactProps) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-blue-500 bg-blue-500/10 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>INSTANT DISCOVERY KICKOFF</span>
+            <span>KONSULTASI INSTAN</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight">
-            Initiate Your Transformation
+            Mulai Transformasi Digital Anda
           </h2>
           <p className={`mt-3 text-sm sm:text-base ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-            Reach out directly. Connect with our dedicated account handlers to organize a symmetrical engineering consultation.
+            Hubungi kami secara langsung. Tim konsultan dan teknisi kami siap merancang solusi terbaik untuk institusi atau perusahaan Anda.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function Contact({ darkMode }: ContactProps) {
             } space-y-6`}>
               
               <h3 className={`font-display font-extrabold text-xl ${darkMode ? "text-white" : "text-slate-950"}`}>
-                Cosmic Labs Headquarters
+                Kantor Pusat Cosmic Labs
               </h3>
 
               <div className="space-y-4 text-xs sm:text-sm font-mono">
@@ -92,9 +92,9 @@ export default function Contact({ darkMode }: ContactProps) {
                 <div className="flex items-start space-x-3.5">
                   <MapPin className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-[10px] text-slate-400 block uppercase">VISITING ADDRESS</span>
+                    <span className="text-[10px] text-slate-400 block uppercase">ALAMAT UTAMA</span>
                     <span className={darkMode ? "text-slate-200" : "text-slate-700"}>
-                      Cosmic Plaza Block C, Suite 102, Sudirman Tech District, Jakarta, Indonesia
+                      Gedung Cosmic Plaza Blok C, Suite 102, Kawasan Teknologi Sudirman, Jakarta, Indonesia
                     </span>
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default function Contact({ darkMode }: ContactProps) {
                 <div className="flex items-start space-x-3.5">
                   <Mail className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-[10px] text-slate-400 block uppercase">CORPORATE EMAIL</span>
+                    <span className="text-[10px] text-slate-400 block uppercase">EMAIL RESMI</span>
                     <a 
                       href="mailto:partner@cosmiclabs.co"
                       className="text-blue-500 hover:underline font-bold"
@@ -117,7 +117,7 @@ export default function Contact({ darkMode }: ContactProps) {
                 <div className="flex items-start space-x-3.5">
                   <Phone className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-[10px] text-slate-400 block uppercase">VOIP HOTLINE</span>
+                    <span className="text-[10px] text-slate-400 block uppercase">LAYANAN TELEPON & VOIP</span>
                     <a 
                       href="tel:+6221504928"
                       className="text-blue-500 hover:underline font-bold"
@@ -131,10 +131,10 @@ export default function Contact({ darkMode }: ContactProps) {
                 <div className="flex items-start space-x-3.5">
                   <Clock className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-[10px] text-slate-400 block uppercase">BUSINESS HOURS</span>
+                    <span className="text-[10px] text-slate-400 block uppercase">JAM OPERASIONAL</span>
                     <span className={darkMode ? "text-slate-300" : "text-slate-700"}>
-                      Monday - Friday: 08:30 - 18:00 WIB <br />
-                      Saturday: 09:00 - 15:00 WIB (Tech support only)
+                      Senin - Jumat: 08:30 - 18:00 WIB <br />
+                      Sabtu: 09:00 - 15:00 WIB (Siaga Dukungan Teknis)
                     </span>
                   </div>
                 </div>
@@ -143,12 +143,11 @@ export default function Contact({ darkMode }: ContactProps) {
 
               {/* Symmetrical Vector Map Representation */}
               <div className="space-y-2 pt-2 border-t border-slate-500/10">
-                <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest block">COSMIC COORDINATES RADAR</span>
+                <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest block">RADAR KOORDINAT KANTOR</span>
                 
                 <div className={`aspect-video rounded-2xl border relative overflow-hidden flex items-center justify-center ${
                   darkMode ? "bg-slate-950 border-white/5" : "bg-slate-100 border-slate-200"
                 }`}>
-                  {/* Styled Background map grids lines */}
                   <div className="absolute inset-0 opacity-15 bg-grid-slate-500" style={{ backgroundImage: "radial-gradient(circle, #3b82f6 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
                   
                   {/* Floating Target Pin */}
@@ -162,8 +161,7 @@ export default function Contact({ darkMode }: ContactProps) {
                     </span>
                   </div>
 
-                  {/* Symmetrical watermarks */}
-                  <div className="absolute bottom-2 left-3 text-[8px] font-mono text-slate-500">Jakarta Central radar v4</div>
+                  <div className="absolute bottom-2 left-3 text-[8px] font-mono text-slate-500">Radar Jakarta Pusat v4</div>
                 </div>
               </div>
 
@@ -182,17 +180,17 @@ export default function Contact({ darkMode }: ContactProps) {
                     <Check className="w-6 h-6" />
                   </div>
                   <h4 className={`font-display font-black text-xl ${darkMode ? "text-white" : "text-slate-950"}`}>
-                    Message Dispatched Successfully
+                    Pesan Berhasil Terkirim
                   </h4>
                   <p className={`text-xs max-w-md mx-auto ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-                    Your project details have been safely queued in our communications database. A solutions architect from our creative and technology team will contact you shortly.
+                    Rincian proyek Anda telah berhasil kami terima. Tim konsultan dari Cosmic Labs akan segera menghubungi Anda dalam waktu singkat.
                   </p>
                   <button
                     id="reset-contact-form-btn"
                     onClick={() => setIsSuccess(false)}
                     className="mt-4 px-5 py-2 rounded-xl bg-blue-600 text-white text-xs font-semibold cursor-pointer"
                   >
-                    Send Another Message
+                    Kirim Pesan Lain
                   </button>
                 </div>
               ) : (
@@ -201,7 +199,7 @@ export default function Contact({ darkMode }: ContactProps) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1.5">
-                        Your Full Name *
+                        Nama Lengkap Anda *
                       </label>
                       <input
                         id="contact-name-input"
@@ -210,7 +208,7 @@ export default function Contact({ darkMode }: ContactProps) {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="e.g. Ir. Dian Kusuma"
+                        placeholder="contoh: Ir. Dian Kusuma"
                         className={`w-full p-3.5 text-xs rounded-xl border outline-none transition-all ${
                           darkMode 
                             ? "bg-slate-950 border-white/5 focus:border-blue-500 text-white" 
@@ -221,7 +219,7 @@ export default function Contact({ darkMode }: ContactProps) {
 
                     <div>
                       <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1.5">
-                        Email Address *
+                        Alamat Email *
                       </label>
                       <input
                         id="contact-email-input"
@@ -230,7 +228,7 @@ export default function Contact({ darkMode }: ContactProps) {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="e.g. dkusuma@institution.id"
+                        placeholder="contoh: dkusuma@sekolah.sch.id"
                         className={`w-full p-3.5 text-xs rounded-xl border outline-none transition-all ${
                           darkMode 
                             ? "bg-slate-950 border-white/5 focus:border-blue-500 text-white" 
@@ -242,7 +240,7 @@ export default function Contact({ darkMode }: ContactProps) {
 
                   <div>
                     <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1.5">
-                      Operational Area of Inquiry
+                      Kategori Solusi Yang Dibutuhkan
                     </label>
                     <select
                       id="contact-subject-select"
@@ -255,16 +253,16 @@ export default function Contact({ darkMode }: ContactProps) {
                           : "bg-slate-50 border-slate-200 focus:border-blue-500 text-slate-700"
                       }`}
                     >
-                      <option value="Digital Solutions">🌐 Digital Solutions (Web apps, CMS, Portals)</option>
-                      <option value="Connectivity & Fiber">📡 Connectivity (Dedicated Fiber Splicing, APs)</option>
-                      <option value="IT Infrastructure">🖥 IT Infrastructure (Proxmox Clustering, Security)</option>
-                      <option value="Creative Studio">🎨 Creative Studio (Logo systems, corporate video)</option>
+                      <option value="Digital Solutions">🌐 Solusi Digital (Aplikasi Web, Portal Sekolah, CMS)</option>
+                      <option value="Connectivity & Fiber">📡 Konektivitas & Fiber Optik (Internet Dedicated 1:1)</option>
+                      <option value="IT Infrastructure">🖥 Infrastruktur IT (Server Proxmox, Keamanan Jaringan)</option>
+                      <option value="Creative Studio">🎨 Studio Kreatif (Logo Branding, Video Profil, Animasi)</option>
                     </select>
                   </div>
 
                   <div>
                     <label className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block mb-1.5">
-                      Detailed message / Project guidelines *
+                      Pesan Detail & Catatan Kebutuhan *
                     </label>
                     <textarea
                       id="contact-message-input"
@@ -273,7 +271,7 @@ export default function Contact({ darkMode }: ContactProps) {
                       rows={5}
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Outline your database configurations, fiber requirements, design elements, or institutional delivery timelines..."
+                      placeholder="Jelaskan secara singkat mengenai kebutuhan sistem, jaringan internet, atau jadwal pengerjaan yang diinginkan..."
                       className={`w-full p-3.5 text-xs rounded-xl border outline-none transition-all resize-none ${
                         darkMode 
                           ? "bg-slate-950 border-white/5 focus:border-blue-500 text-white" 
@@ -290,11 +288,11 @@ export default function Contact({ darkMode }: ContactProps) {
                     className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white text-xs font-semibold flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/20 cursor-pointer"
                   >
                     {isSubmitting ? (
-                      <span>Encrypting details...</span>
+                      <span>Mengirimkan rincian...</span>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        <span>Dispatch Inquiry Symmetrically</span>
+                        <span>Kirimkan Pesan Konsultasi</span>
                       </>
                     )}
                   </button>
@@ -330,11 +328,11 @@ export default function Contact({ darkMode }: ContactProps) {
               </div>
               <div>
                 <h4 className="font-bold font-display">Aria Kusuma</h4>
-                <p className="text-[9px] text-slate-400 font-mono">Senior Support Agent • Online</p>
+                <p className="text-[9px] text-slate-400 font-mono">Konsultan Layanan • Online</p>
               </div>
             </div>
             <p className="text-slate-400 leading-relaxed mb-3">
-              "Hi there! I am ready to handle your questions regarding our digital, fiber connectivity, or IT infrastructure operations. Let's talk over WhatsApp!"
+              "Halo! Ada yang bisa saya bantu terkait solusi web, internet fiber optik, atau infrastruktur IT institusi Anda? Mari berdiskusi via WhatsApp!"
             </p>
             <button
               id="whatsapp-agent-launch-btn"
@@ -342,7 +340,7 @@ export default function Contact({ darkMode }: ContactProps) {
               className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold flex items-center justify-center space-x-1.5 shadow-lg cursor-pointer"
             >
               <MessageSquareCode className="w-4 h-4" />
-              <span>Connect Over WhatsApp</span>
+              <span>Diskusi via WhatsApp</span>
             </button>
           </div>
         )}

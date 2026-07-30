@@ -39,10 +39,10 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-blue-500 bg-blue-500/10 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>THE COSMIC EDGE</span>
+            <span>KEUNGGULAN COSMIC</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.2]">
-            Why Institutions Trust Cosmic Labs
+            Mengapa Institusi Memilih Cosmic Labs
           </h2>
           <div className="h-1.5 w-16 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full mx-auto mt-5" />
         </div>
@@ -50,7 +50,7 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[220px]">
           
-          {/* Card 1: 99.99% Symmetrical Fiber (Large - span 6 md / span 2 rows) */}
+          {/* Card 1: Symmetrical Fiber */}
           <div className={`md:col-span-8 md:row-span-2 p-6 sm:p-8 rounded-3xl border flex flex-col justify-between relative overflow-hidden ${
             darkMode 
               ? "bg-slate-900/40 border-white/5 hover:border-white/10" 
@@ -65,16 +65,16 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
                 </div>
                 <div className="flex items-center space-x-1 text-[10px] font-mono text-emerald-500 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
                   <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full animate-ping mr-1" />
-                  <span>SLA GUARANTEED ACTIVE</span>
+                  <span>SLA AKTIF TERVERIFIKASI</span>
                 </div>
               </div>
               
               <div className="space-y-2">
                 <h3 className={`font-display font-black text-2xl ${darkMode ? "text-white" : "text-slate-950"}`}>
-                  Carrier-Grade Fiber Connectivity
+                  Konektivitas Fiber Optik Kelas Operator
                 </h3>
                 <p className={`text-sm leading-relaxed max-w-xl ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-                  We lay physical fiber optic rings directly to school complexes, commercial blocks, and local government departments. Symmetrical upload/download parameters mean you get uninterrupted 1:1 commercial capacity even during peak hour workloads.
+                  Kami menggelar jaringan cincin fiber optik fisik langsung ke kompleks sekolah, gedung perkantoran, dan kantor dinas pemerintah. Parameter bandwidth simetris 1:1 menjamin kelancaran transaksi data tanpa pembatasan kuota (FUP) bahkan saat beban puncak.
                 </p>
               </div>
             </div>
@@ -85,17 +85,17 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
             }`}>
               <div className="flex items-center space-x-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Uptime SLA index:</span>
+                <span>Indeks SLA Uptime Real-Time:</span>
                 <span className="text-emerald-500 font-bold">{uptime}%</span>
               </div>
               <div className="hidden sm:flex items-center space-x-3 text-[10px] text-slate-500">
-                <span>Latency: ~3.2ms</span>
+                <span>Latensi: ~3.2ms</span>
                 <span>Jitter: 0.12ms</span>
               </div>
             </div>
           </div>
 
-          {/* Card 2: Experienced Team (Medium - span 4 md / span 1 row) */}
+          {/* Card 2: Experienced Team */}
           <div className={`md:col-span-4 p-6 rounded-3xl border flex flex-col justify-between ${
             darkMode ? "bg-slate-900/40 border-white/5" : "bg-white border-slate-200 shadow hover:shadow-xl"
           }`}>
@@ -103,15 +103,15 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
               <div className="p-3 rounded-xl bg-blue-500/10 text-blue-500">
                 <Users className="w-5 h-5" />
               </div>
-              <span className="text-[9px] font-mono text-slate-400">CERTIFIED ENGINEERS</span>
+              <span className="text-[9px] font-mono text-slate-400">TIM TERSERTIFIKASI</span>
             </div>
             
             <div className="space-y-1">
               <h4 className={`font-display font-bold text-base ${darkMode ? "text-white" : "text-slate-900"}`}>
-                Experienced Squad
+                Tim Berpengalaman
               </h4>
               <p className={`text-xs ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-                Cisco, Mikrotik MTCNA, and AWS certified senior technicians, web architects, and creative directors.
+                Teknisi senior bersertifikat Cisco & MikroTik MTCNA, arsitek sistem web, serta pengarah kreatif profesional.
               </p>
             </div>
 
@@ -125,7 +125,7 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
             </div>
           </div>
 
-          {/* Card 3: Modern Tech Stack (Medium - span 4 md / span 1 row) */}
+          {/* Card 3: Modern Tech Stack */}
           <div className={`md:col-span-4 p-6 rounded-3xl border flex flex-col justify-between ${
             darkMode ? "bg-slate-900/40 border-white/5" : "bg-white border-slate-200 shadow hover:shadow-xl"
           }`}>
@@ -133,24 +133,24 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
               <div className="p-3 rounded-xl bg-pink-500/10 text-pink-500">
                 <Zap className="w-5 h-5" />
               </div>
-              <span className="text-[9px] font-mono text-slate-400">NEXT-GEN DECK</span>
+              <span className="text-[9px] font-mono text-slate-400">TEKNOLOGI MODERN</span>
             </div>
 
             <div className="space-y-1">
               <h4 className={`font-display font-bold text-base ${darkMode ? "text-white" : "text-slate-900"}`}>
-                Modern Tech Stack
+                Teknologi Terdepan
               </h4>
               <p className={`text-xs ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-                Vite, React 19, Tailwind CSS v4, Proxmox hypervisors, and Ceph clusters ensure lightning speeds.
+                Vite, React 19, Tailwind CSS v4, hypervisor Proxmox VE, dan Ceph Storage untuk menjamin kecepatan maksimal.
               </p>
             </div>
 
             <span className="text-[10px] font-mono text-blue-500 font-bold block">
-              100/100 Lighthouse Performance
+              Skor Performa Lighthouse 100/100
             </span>
           </div>
 
-          {/* Card 4: Professional Support (Medium - span 4 md / span 1 row) */}
+          {/* Card 4: Professional Support */}
           <div className={`md:col-span-4 p-6 rounded-3xl border flex flex-col justify-between relative overflow-hidden ${
             darkMode ? "bg-slate-900/40 border-white/5" : "bg-white border-slate-200 shadow hover:shadow-xl"
           }`}>
@@ -160,25 +160,25 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
               <div className="p-3 rounded-xl bg-violet-500/10 text-violet-500">
                 <Clock className="w-5 h-5" />
               </div>
-              <span className="text-[9px] font-mono text-slate-400">RESPONSE ENGINE</span>
+              <span className="text-[9px] font-mono text-slate-400">DUKUNGAN PROAKTIF</span>
             </div>
 
             <div className="space-y-1">
               <h4 className={`font-display font-bold text-base ${darkMode ? "text-white" : "text-slate-900"}`}>
-                Professional Support
+                Dukungan Profesional 24/7
               </h4>
               <p className={`text-xs ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-                Active network monitors and server diagnostics alert us of failures before your operations are impacted.
+                Sistem pemantauan proaktif dan diagnostik server otomatis memberikan peringatan dini sebelum gangguan terjadi.
               </p>
             </div>
 
             <span className="text-[10px] text-emerald-500 font-mono font-bold flex items-center">
               <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full mr-1 animate-pulse" />
-              24/7/365 Support SLA
+              Garansi SLA Siaga 24/7/365
             </span>
           </div>
 
-          {/* Card 5: Long-Term Partnership (Medium - span 4 md / span 1 row) */}
+          {/* Card 5: Long-Term Partnership */}
           <div className={`md:col-span-4 p-6 rounded-3xl border flex flex-col justify-between ${
             darkMode ? "bg-slate-900/40 border-white/5" : "bg-white border-slate-200 shadow hover:shadow-xl"
           }`}>
@@ -186,24 +186,24 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
               <div className="p-3 rounded-xl bg-indigo-500/10 text-indigo-500">
                 <Infinity className="w-5 h-5" />
               </div>
-              <span className="text-[9px] font-mono text-slate-400">ACTIVE TRUST</span>
+              <span className="text-[9px] font-mono text-slate-400">KEMITRAAN BERKELANJUTAN</span>
             </div>
 
             <div className="space-y-1">
               <h4 className={`font-display font-bold text-base ${darkMode ? "text-white" : "text-slate-900"}`}>
-                Long-Term Partnership
+                Kemitraan Jangka Panjang
               </h4>
               <p className={`text-xs ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-                We don't just build and run. We provide continuous maintenance, backups, and strategic layout optimizations.
+                Kami tidak sekadar membangun. Kami mendampingi dengan pemeliharaan berkelanjutan, cadangan rutin, dan pembaruan sistem.
               </p>
             </div>
 
             <span className="text-[10px] text-indigo-500 font-mono font-bold block">
-              Active clients: {activeClients}+
+              Pengguna Aktif: {activeClients}+
             </span>
           </div>
 
-          {/* Card 6: Creative Excellence (Medium - span 4 md / span 1 row) */}
+          {/* Card 6: Creative Excellence */}
           <div className={`md:col-span-4 p-6 rounded-3xl border flex flex-col justify-between ${
             darkMode ? "bg-slate-900/40 border-white/5" : "bg-white border-slate-200 shadow hover:shadow-xl"
           }`}>
@@ -211,20 +211,20 @@ export default function BentoGrid({ darkMode }: BentoGridProps) {
               <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-500">
                 <Award className="w-5 h-5" />
               </div>
-              <span className="text-[9px] font-mono text-slate-400">CREATIVE DEPT</span>
+              <span className="text-[9px] font-mono text-slate-400">STUDIO KREATIF</span>
             </div>
 
             <div className="space-y-1">
               <h4 className={`font-display font-bold text-base ${darkMode ? "text-white" : "text-slate-900"}`}>
-                Creative Excellence
+                Keunggulan Desain & Media
               </h4>
               <p className={`text-xs ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-                Cinematic videography, responsive design tokens, and vector illustration systems that turn eyeballs into conversions.
+                Videografi sinematik, token desain responsif, dan sistem identitas visual yang memperkuat reputasi brand Anda.
               </p>
             </div>
 
             <span className="text-[10px] text-pink-500 font-mono font-bold block">
-              Awwwards Inspired Design
+              Standar Desain Kelas Dunia
             </span>
           </div>
 

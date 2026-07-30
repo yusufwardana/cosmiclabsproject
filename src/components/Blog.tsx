@@ -11,13 +11,13 @@ interface BlogProps {
 }
 
 export default function Blog({ darkMode }: BlogProps) {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Semua");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [likes, setLikes] = useState<Record<string, number>>({});
   const [shared, setShared] = useState<Record<string, boolean>>({});
 
-  const categories = ["All", "Digital Solutions", "Connectivity", "IT Infrastructure", "Creative Studio"];
+  const categories = ["Semua", "Digital Solutions", "Connectivity", "IT Infrastructure", "Creative Studio"];
 
   const handleLike = (postId: string, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -42,7 +42,7 @@ export default function Blog({ darkMode }: BlogProps) {
   };
 
   const filteredPosts = BLOG_POSTS.filter((post) => {
-    const categoryMatch = activeCategory === "All" || post.category === activeCategory;
+    const categoryMatch = activeCategory === "Semua" || post.category === activeCategory;
     const searchMatch = 
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -64,15 +64,15 @@ export default function Blog({ darkMode }: BlogProps) {
           <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-blue-500 bg-blue-500/10">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>COSMIC KNOWLEDGE HACKS</span>
+              <span>WAWASAN & ARTIKEL COSMIC</span>
             </div>
             <h2 className={`font-display font-black text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight ${
               darkMode ? "text-white" : "text-slate-950"
             }`}>
-              Insights & Strategic Trends
+              Wawasan & Tren Teknologi Terkini
             </h2>
             <p className={`text-sm sm:text-base ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-              Dive into our detailed tech and visual trends written by lead web developers, security experts, and network engineers.
+              Pelajari panduan mendalam seputar arsitektur web, optimalisasi fiber optik, hingga tren desain identitas visual langsung dari tim ahli kami.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ export default function Blog({ darkMode }: BlogProps) {
             <input
               id="blog-search-input"
               type="text"
-              placeholder="Search guides or tag keywords..."
+              placeholder="Cari panduan atau kata kunci..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className={`w-full pl-10 pr-4 py-3 text-xs rounded-xl border outline-none transition-all ${
@@ -120,13 +120,13 @@ export default function Blog({ darkMode }: BlogProps) {
         {/* Blog Post List */}
         {filteredPosts.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-slate-400 font-mono text-sm">No articles match your parameters.</p>
+            <p className="text-slate-400 font-mono text-sm">Tidak ada artikel yang cocok dengan pencarian Anda.</p>
             <button
               id="blog-clear-filters"
-              onClick={() => { setActiveCategory("All"); setSearchQuery(""); }}
+              onClick={() => { setActiveCategory("Semua"); setSearchQuery(""); }}
               className="mt-2 text-xs text-blue-500 underline font-semibold cursor-pointer"
             >
-              Reset Filters
+              Reset Filter
             </button>
           </div>
         ) : (
@@ -142,7 +142,6 @@ export default function Blog({ darkMode }: BlogProps) {
                     : "bg-slate-50 border-slate-200/80 hover:bg-white hover:shadow-lg hover:shadow-slate-900/5"
                 }`}
               >
-                {/* Horizontal / Vertical split based on size */}
                 <div className="flex flex-col sm:flex-row h-full">
                   
                   {/* Blog Image block */}
@@ -288,7 +287,7 @@ export default function Blog({ darkMode }: BlogProps) {
                   </div>
                   
                   <div className="text-right">
-                    <span>Published: {selectedPost.date}</span>
+                    <span>Diterbitkan: {selectedPost.date}</span>
                     <span className="block mt-0.5">{selectedPost.readTime}</span>
                   </div>
                 </div>
@@ -297,7 +296,7 @@ export default function Blog({ darkMode }: BlogProps) {
                 <div className={`space-y-4 text-sm sm:text-base leading-relaxed ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
                   <p className="font-semibold text-lg">{selectedPost.excerpt}</p>
                   <p>{selectedPost.content}</p>
-                  <p>In addition, Cosmic Labs continuously builds dynamic templates, secures regional cloud databases, and layouts fiber connections. Staying informed of visual branding assets and technological optimizations guarantees your institution reaches peak conversion indices.</p>
+                  <p>Selain itu, Cosmic Labs terus mengembangkan solusi terpadu, infrastruktur cloud lokal yang aman, dan arsitektur fiber optik. Memahami teknologi serta optimalisasi desain memastikan institusi Anda mencapai performa maksimal secara berkelanjutan.</p>
                 </div>
 
                 {/* Tags lists */}
@@ -325,7 +324,7 @@ export default function Blog({ darkMode }: BlogProps) {
                     className="p-2 border border-slate-500/10 rounded-xl hover:bg-slate-500/10 text-slate-400 hover:text-rose-500 transition-all flex items-center space-x-1.5 text-xs font-semibold cursor-pointer"
                   >
                     <Heart className={`w-4 h-4 ${likes[selectedPost.id] ? "fill-rose-500 text-rose-500" : ""}`} />
-                    <span>{likes[selectedPost.id] || 0} Likes</span>
+                    <span>{likes[selectedPost.id] || 0} Suka</span>
                   </button>
 
                   <button
@@ -334,7 +333,7 @@ export default function Blog({ darkMode }: BlogProps) {
                     className="p-2 border border-slate-500/10 rounded-xl hover:bg-slate-500/10 text-slate-400 hover:text-blue-500 transition-all flex items-center space-x-1.5 text-xs font-semibold cursor-pointer"
                   >
                     <Share2 className="w-4 h-4" />
-                    <span>{shared[selectedPost.id] ? "Link Copied!" : "Share Article"}</span>
+                    <span>{shared[selectedPost.id] ? "Tautan Tersalin!" : "Bagikan Artikel"}</span>
                   </button>
                 </div>
 
@@ -343,7 +342,7 @@ export default function Blog({ darkMode }: BlogProps) {
                   onClick={() => setSelectedPost(null)}
                   className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold cursor-pointer"
                 >
-                  Close Reader
+                  Tutup Artikel
                 </button>
               </div>
 

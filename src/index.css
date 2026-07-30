@@ -1,57 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+/* Hallmark · macrostructure: workbench-bento · theme: cobalt-lumen · variation: cool-paper, electric-cobalt, ruler-hairlines */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", "Poppins", system-ui, sans-serif;
-  --font-display: "Poppins", "Inter", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", "Plus Jakarta Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --color-primary: #2563EB;
-  --color-secondary: #0F172A;
-  --color-accent: #22C55E;
-  --color-dark-bg: #020617;
-  --color-light-bg: #F8FAFC;
+  --color-cobalt-bg: oklch(0.985 0.004 250);
+  --color-cobalt-dark-bg: oklch(0.12 0.015 258);
+  --color-cobalt-accent: oklch(0.58 0.20 256);
+  --color-cobalt-accent-hover: oklch(0.52 0.22 256);
+  --color-cobalt-rule: oklch(0.24 0.02 258 / 0.12);
+  --color-cobalt-dark-rule: oklch(0.985 0.004 250 / 0.12);
 
-  --animate-aurora-slow: aurora 25s ease infinite alternate;
-  --animate-aurora-fast: aurora 15s ease infinite alternate;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
 }
 
-@keyframes aurora {
-  0% {
-    transform: translate(0px, 0px) scale(1) rotate(0deg);
-  }
-  50% {
-    transform: translate(40px, -50px) scale(1.2) rotate(180deg);
-  }
-  100% {
-    transform: translate(-30px, 40px) scale(0.9) rotate(360deg);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-/* Base resets & custom smooth layout elements */
-html {
+/* Hallmark Non-Negotiable Mobile & Page Clipping */
+html, body {
+  overflow-x: clip;
   scroll-behavior: smooth;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hallmark Typography Discipline Rules */
+h1, h2, h3, h4, h5, h6, .display-head {
+  font-family: var(--font-display);
+  font-style: normal !important; /* Hallmark Gate 38a: No italic headers */
+  letter-spacing: -0.03em;
+}
+
+/* Hallmark 8-State Control Focus Discipline */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid oklch(0.58 0.20 256);
+  outline-offset: 2px;
 }
 
 /* Custom modern scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -59,96 +61,69 @@ html {
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(15, 23, 42, 0.12);
-  border-radius: 99px;
+  background: rgba(15, 23, 42, 0.15);
+  border-radius: 4px;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(15, 23, 42, 0.25);
+  background: rgba(15, 23, 42, 0.3);
 }
 
-/* Glassmorphism utility filters */
-.glass-effect-dark {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Ruler-drawn hairlines utility */
+.hallmark-border {
+  border: 1px solid var(--color-cobalt-rule);
+}
+.dark .hallmark-border {
+  border: 1px solid var(--color-cobalt-dark-rule);
 }
 
-.glass-effect-light {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(15, 23, 42, 0.06);
+/* High-precision 8-state button styling */
+.hallmark-btn-primary {
+  background-color: oklch(0.58 0.20 256);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 0.625rem 1.25rem;
+  transition: all 0.15s ease-in-out;
+  white-space: nowrap;
 }
 
-/* Animated grid backgrounds */
-.grid-bg-dark {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+.hallmark-btn-primary:hover {
+  background-color: oklch(0.52 0.22 256);
+  transform: translateY(-1px);
 }
 
-.grid-bg-light {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+.hallmark-btn-primary:active {
+  transform: translateY(0);
 }
 
-/* Aurora background blurs */
-.aurora-blur {
-  filter: blur(80px);
-  opacity: 0.6;
-  mix-blend-mode: screen;
+.hallmark-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.light .aurora-blur {
-  mix-blend-mode: multiply;
-  opacity: 0.35;
+/* Hallmark Graphite Dark Section Background */
+.hallmark-graphite {
+  background-color: oklch(0.18 0.016 260);
+  color: oklch(0.985 0.004 250);
 }
 
-/* Elegant Text Gradients */
-.text-glow-primary {
-  text-shadow: 0 0 40px rgba(37, 99, 235, 0.35);
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.text-gradient-cosmic {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
-}
-
-.text-gradient-digital {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%);
-}
-
-.text-gradient-creative {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(135deg, #EC4899 0%, #F43F5E 100%);
-}
-
-/* Custom interactive glowing ring */
-.glow-card-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.glow-card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px -10px rgba(37, 99, 235, 0.15);
+.animate-fadeIn {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

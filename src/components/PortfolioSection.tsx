@@ -11,29 +11,24 @@ interface PortfolioSectionProps {
 }
 
 export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeCategory, setActiveCategory] = useState<string>("Semua");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [activeTab, setActiveTab] = useState<"details" | "sandbox">("details");
 
-  // Filter Categories
+  // Filter Categories in Indonesian
   const categories = [
-    "All",
+    "Semua",
     "Website Development",
     "School Websites",
     "Government Projects",
     "Networking",
-    "Internet Installation",
     "IT Infrastructure",
-    "Graphic Design",
-    "Branding",
-    "Video Editing",
-    "Motion Graphics"
+    "Branding"
   ];
 
-  // Map of categories we actually have items for, to avoid empty views on initial filters
   const filteredPortfolio = PORTFOLIO.filter((item) => {
-    const categoryMatch = activeCategory === "All" || item.category === activeCategory;
+    const categoryMatch = activeCategory === "Semua" || item.category === activeCategory;
     const searchMatch = 
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -55,15 +50,15 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
           <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-pink-500 bg-pink-500/10">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>COSMIC MASTERPIECES</span>
+              <span>KARYA UTAMA COSMIC</span>
             </div>
             <h2 className={`font-display font-black text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight ${
               darkMode ? "text-white" : "text-slate-950"
             }`}>
-              Our Verified Case Studies
+              Studi Kasus & Portofolio Terverifikasi
             </h2>
             <p className={`text-sm sm:text-base ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-              Explore our real deployments, secure network architectures, integrated school platforms, and graphic assets engineered globally.
+              Jelajahi implementasi nyata portal sekolah, jaringan fiber optik, cluster server, serta desain branding yang kami kerjakan untuk berbagai institusi.
             </p>
           </div>
 
@@ -72,7 +67,7 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
             <input
               id="portfolio-search-input"
               type="text"
-              placeholder="Search by tech or keyword..."
+              placeholder="Cari berdasarkan teknologi atau kata kunci..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className={`w-full pl-10 pr-4 py-3 text-xs rounded-xl border outline-none transition-all ${
@@ -111,13 +106,13 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
         {/* Portfolio Cards Grid */}
         {filteredPortfolio.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-slate-400 font-mono text-sm">No project found matching those filters.</p>
+            <p className="text-slate-400 font-mono text-sm">Tidak ditemukan proyek yang sesuai dengan pencarian tersebut.</p>
             <button
               id="portfolio-clear-filters"
-              onClick={() => { setActiveCategory("All"); setSearchQuery(""); }}
+              onClick={() => { setActiveCategory("Semua"); setSearchQuery(""); }}
               className="mt-3 text-xs text-blue-500 underline font-semibold cursor-pointer"
             >
-              Reset Filters
+              Reset Filter
             </button>
           </div>
         ) : (
@@ -176,12 +171,12 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
                         </span>
                       ))}
                       {project.technologies.length > 3 && (
-                        <span className="text-[9px] font-mono text-slate-500 px-1 py-0.5">+{project.technologies.length - 3} more</span>
+                        <span className="text-[9px] font-mono text-slate-500 px-1 py-0.5">+{project.technologies.length - 3} lainnya</span>
                       )}
                     </div>
 
                     <div className="flex items-center justify-between text-xs font-bold text-blue-500">
-                      <span>Explore Project Specs</span>
+                      <span>Lihat Spesifikasi Proyek</span>
                       <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
                     </div>
                   </div>
@@ -241,8 +236,8 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
               {/* Specs Navigation tabs inside modal */}
               <div className="flex border-b border-slate-500/10 px-6 bg-slate-500/5">
                 {[
-                  { id: "details", label: "Project Specs & Case Study" },
-                  { id: "sandbox", label: "Live Prototype Sandbox" },
+                  { id: "details", label: "Spesifikasi Proyek & Studi Kasus" },
+                  { id: "sandbox", label: "Simulasi Interaktif" },
                 ].map((tb) => (
                   <button
                     key={tb.id}
@@ -269,7 +264,7 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
                     {/* Left details */}
                     <div className="md:col-span-8 space-y-5">
                       <h4 className={`font-display font-bold text-lg ${darkMode ? "text-white" : "text-slate-950"}`}>
-                        Case Study Overview
+                        Tinjauan Studi Kasus
                       </h4>
                       <p className={`text-sm sm:text-base leading-relaxed ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
                         {selectedProject.longDescription}
@@ -277,7 +272,7 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
 
                       <div className="space-y-3">
                         <h5 className={`font-display font-semibold text-sm ${darkMode ? "text-white" : "text-slate-900"}`}>
-                          Key Deliverables
+                          Hasil Utama Proyek
                         </h5>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                           {selectedProject.deliverables.map((deliv) => (
@@ -295,13 +290,13 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
                       <div className={`p-5 rounded-2xl border ${
                         darkMode ? "bg-slate-900/40 border-white/5" : "bg-slate-50 border-slate-200"
                       } space-y-4`}>
-                        <h4 className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Project Metadata</h4>
+                        <h4 className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Metadata Proyek</h4>
                         
                         <div className="space-y-3 text-xs">
                           <div className="flex justify-between items-center">
                             <span className="text-slate-400 flex items-center space-x-1.5 font-mono">
                               <User className="w-3.5 h-3.5" />
-                              <span>Client:</span>
+                              <span>Klien:</span>
                             </span>
                             <span className={`font-bold ${darkMode ? "text-white" : "text-slate-900"}`}>{selectedProject.client}</span>
                           </div>
@@ -309,7 +304,7 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
                           <div className="flex justify-between items-center">
                             <span className="text-slate-400 flex items-center space-x-1.5 font-mono">
                               <Calendar className="w-3.5 h-3.5" />
-                              <span>Year:</span>
+                              <span>Tahun:</span>
                             </span>
                             <span className={`font-bold ${darkMode ? "text-white" : "text-slate-900"}`}>{selectedProject.year}</span>
                           </div>
@@ -317,14 +312,14 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
                           <div className="flex justify-between items-center">
                             <span className="text-slate-400 flex items-center space-x-1.5 font-mono">
                               <Tag className="w-3.5 h-3.5" />
-                              <span>Type:</span>
+                              <span>Tipe:</span>
                             </span>
                             <span className={`font-bold ${darkMode ? "text-white" : "text-slate-900"}`}>{selectedProject.category}</span>
                           </div>
                         </div>
 
                         <div className="space-y-2 pt-3 border-t border-slate-500/10">
-                          <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">Tech Integrated</span>
+                          <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">Teknologi Terintegrasi</span>
                           <div className="flex flex-wrap gap-1.5">
                             {selectedProject.technologies.map((tech) => (
                               <span
@@ -348,14 +343,14 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
                     <div className="flex items-center justify-between pb-2 border-b border-slate-500/10">
                       <div>
                         <h4 className={`font-display font-bold text-base ${darkMode ? "text-white" : "text-slate-950"}`}>
-                          Interactive Simulation sandbox
+                          Simulasi Prototip Interaktif
                         </h4>
-                        <p className="text-[11px] text-slate-400 font-mono mt-0.5">COSMIC SIMULATOR ENGINE_RUNNING v4.2</p>
+                        <p className="text-[11px] text-slate-400 font-mono mt-0.5">SISTEM SIMULASI COSMIC v4.2 AKTIF</p>
                       </div>
                       
                       <div className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[9px] font-mono text-emerald-500 font-medium">
                         <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full animate-ping mr-1" />
-                        <span>PROTOTYPE CONNECTED</span>
+                        <span>PROTOTIPE TERHUBUNG</span>
                       </div>
                     </div>
 
@@ -363,70 +358,30 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
                     <div className={`p-6 rounded-2xl border min-h-[200px] flex flex-col justify-between ${
                       darkMode ? "bg-slate-900 border-white/5" : "bg-slate-50 border-slate-200"
                     }`}>
-                      {selectedProject.category.includes("Website") || selectedProject.category.includes("Projects") ? (
-                        <div className="space-y-4">
-                          {/* Symmetrical address bar mock */}
-                          <div className="flex items-center space-x-2 bg-slate-950/60 p-2 rounded-lg border border-white/5 text-xs font-mono text-slate-400">
-                            <span className="text-emerald-500 font-bold">HTTPS://</span>
-                            <span>{selectedProject.client.toLowerCase().replace(/\s+/g, "")}.com/portal</span>
+                      <div className="space-y-4">
+                        <div className="flex items-center space-x-2 bg-slate-950/60 p-2 rounded-lg border border-white/5 text-xs font-mono text-slate-400">
+                          <span className="text-emerald-500 font-bold">HTTPS://</span>
+                          <span>{selectedProject.client.toLowerCase().replace(/\s+/g, "")}.sch.id/portal</span>
+                        </div>
+                        
+                        <div className="p-4 rounded-xl border border-blue-500/10 bg-slate-950/40 space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] text-blue-500 font-bold font-mono">AKSES MASUK AMAN TERVERIFIKASI</span>
+                            <span className="text-[9px] text-slate-500">Node Cluster: AP-SOUTH</span>
                           </div>
-                          
-                          {/* Mock system screen */}
-                          <div className="p-4 rounded-xl border border-blue-500/10 bg-slate-950/40 space-y-3">
-                            <div className="flex items-center justify-between">
-                              <span className="text-[10px] text-blue-500 font-bold font-mono">SECURE LOGIN ACTIVE</span>
-                              <span className="text-[9px] text-slate-500">Node Cluster: AP-SOUTH</span>
-                            </div>
-                            <div className="space-y-2">
-                              <div className="h-4 w-1/2 bg-blue-500/10 rounded" />
-                              <div className="h-3 w-4/5 bg-slate-500/10 rounded" />
-                            </div>
-                            <div className="h-9 w-24 bg-blue-600 rounded flex items-center justify-center text-[10px] text-white font-mono font-bold animate-pulse">
-                              DEMO ACCESSED
-                            </div>
+                          <div className="space-y-2">
+                            <div className="h-4 w-1/2 bg-blue-500/10 rounded" />
+                            <div className="h-3 w-4/5 bg-slate-500/10 rounded" />
+                          </div>
+                          <div className="h-9 w-32 bg-blue-600 rounded flex items-center justify-center text-[10px] text-white font-mono font-bold animate-pulse">
+                            DEMO DIBUKA
                           </div>
                         </div>
-                      ) : selectedProject.category.includes("Networking") || selectedProject.category.includes("Infrastructure") ? (
-                        <div className="space-y-4">
-                          {/* IP Route mock */}
-                          <div className="flex items-center justify-between text-xs font-mono text-slate-400 pb-2 border-b border-white/5">
-                            <span>SPLICED INTERCONNECT PORT</span>
-                            <span>IP: 192.168.88.1</span>
-                          </div>
+                      </div>
 
-                          {/* Ping terminal */}
-                          <div className="bg-slate-950/90 rounded-xl p-4 border border-white/5 font-mono text-[11px] text-emerald-400 space-y-1">
-                            <div>PING {selectedProject.client.toLowerCase().replace(/\s+/g, "")}.net (104.22.4.9) 56(84) bytes of data.</div>
-                            <div>64 bytes from 104.22.4.9: icmp_seq=1 ttl=58 time=3.14 ms</div>
-                            <div>64 bytes from 104.22.4.9: icmp_seq=2 ttl=58 time=3.09 ms</div>
-                            <div className="text-white font-bold">--- {selectedProject.client.toLowerCase().replace(/\s+/g, "")}.net ping statistics ---</div>
-                            <div>2 packets transmitted, 2 received, 0% packet loss, time 1002ms</div>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="space-y-4">
-                          {/* Creative rendering */}
-                          <div className="flex items-center justify-between text-xs font-mono text-slate-400 pb-2 border-b border-white/5">
-                            <span>RESOLVE TIMELINE RENDER</span>
-                            <span>FPS: 60 / FIXED</span>
-                          </div>
-
-                          {/* Video player mock */}
-                          <div className="relative aspect-video rounded-xl overflow-hidden border border-white/5 bg-slate-950/40 flex items-center justify-center">
-                            <div className="absolute inset-0 flex items-center justify-center bg-slate-950/40 z-10">
-                              <div className="p-4 rounded-full bg-pink-500/10 text-pink-500 border border-pink-500/20 hover:scale-105 transition-transform animate-pulse">
-                                <Sparkles className="w-8 h-8" />
-                              </div>
-                            </div>
-                            <div className="absolute bottom-4 left-4 text-[10px] font-mono text-slate-400 z-10">0:42 / 1:00 SECONDS</div>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Quick success callout */}
                       <div className="flex items-center space-x-2 text-xs text-blue-500 font-mono pt-3 border-t border-slate-500/10 mt-2">
                         <Check className="w-4 h-4 text-emerald-500" />
-                        <span>Simulated environment running successfully.</span>
+                        <span>Lingkungan simulasi berjalan tanpa kendala.</span>
                       </div>
                     </div>
                   </div>
@@ -437,14 +392,14 @@ export default function PortfolioSection({ darkMode }: PortfolioSectionProps) {
               {/* Bottom Lightbox footer */}
               <div className="p-6 border-t border-slate-500/10 bg-slate-500/5 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p className="text-[11px] text-slate-400 font-mono text-center sm:text-left">
-                  Would you like a customized solution like this? Secure an estimator build.
+                  Ingin solusi serupa untuk institusi Anda? Dapatkan estimasi dari tim konsultan kami.
                 </p>
                 <button
                   id="lightbox-close-cta"
                   onClick={() => setSelectedProject(null)}
                   className="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold cursor-pointer"
                 >
-                  Close Project Specs
+                  Tutup Spesifikasi Proyek
                 </button>
               </div>
 

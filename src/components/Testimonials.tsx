@@ -32,13 +32,13 @@ export default function Testimonials({ darkMode }: TestimonialsProps) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-blue-500 bg-blue-500/10 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>INSTITUTIONAL TRUST</span>
+            <span>KEPERCAYAAN INSTITUSI</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight">
-            Loved by Schools, Businesses, and Governments
+            Dipercaya oleh Sekolah, Bisnis, dan Pemerintah
           </h2>
           <p className={`mt-3 text-sm sm:text-base ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-            Read case-studies and verified client feedback on how our systems boost speeds, secure records, and scale digital assets.
+            Ulasan dan kesaksian nyata dari para mitra mengenai peningkatan performa, keandalan jaringan, dan keamanan sistem kami.
           </p>
         </div>
 
@@ -51,7 +51,6 @@ export default function Testimonials({ darkMode }: TestimonialsProps) {
               ? "bg-slate-900/40 border-white/5 shadow-2xl" 
               : "bg-white border-slate-200/80 shadow-lg"
           }`}>
-            {/* Symmetrical glowing card border effect */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
             <Quote className="absolute top-8 left-8 w-16 h-16 text-slate-500/10 pointer-events-none" />
 
@@ -83,7 +82,7 @@ export default function Testimonials({ darkMode }: TestimonialsProps) {
                     {current.name}
                   </h4>
                   <p className="text-[11px] sm:text-xs text-slate-400 font-mono">
-                    {current.role} at <strong className="text-blue-500">{current.company}</strong>
+                    {current.role} di <strong className="text-blue-500">{current.company}</strong>
                   </p>
                 </div>
               </div>

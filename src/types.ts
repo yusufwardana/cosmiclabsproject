@@ -10,10 +10,15 @@ export interface Division {
   title: string;
   tagline: string;
   description: string;
-  icon: string;
-  gradient: string;
-  glowColor: string;
-  services: ServiceItem[];
+  icon: any;
+  gradient?: string;
+  glowColor?: string;
+  badge?: string;
+  features?: string[];
+  technologies?: string[];
+  sla?: string;
+  caseStudiesCount?: number;
+  services?: ServiceItem[];
 }
 
 export interface PortfolioItem {
@@ -24,7 +29,7 @@ export interface PortfolioItem {
   description: string;
   longDescription: string;
   imageUrl: string;
-  accentColor: string;
+  accentColor?: string;
   client: string;
   year: string;
   deliverables: string[];
@@ -69,6 +74,8 @@ export interface TimelineMilestone {
   title: string;
   description: string;
 }
+
+export type Milestone = TimelineMilestone;
 
 export interface ProcessStep {
   number: number;

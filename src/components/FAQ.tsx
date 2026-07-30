@@ -28,13 +28,13 @@ export default function FAQ({ darkMode }: FAQProps) {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-blue-500 bg-blue-500/10 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>SUPPORT CENTRAL</span>
+            <span>PUSAT BANTUAN</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl tracking-tight text-center">
-            Frequently Addressed Questions
+            Pertanyaan Yang Sering Diajukan
           </h2>
           <p className={`mt-3 text-sm ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-            Got technical questions regarding dedicated speeds, virtualizations SLA, design guidelines, or payment models? We have answers.
+            Temukan jawaban lengkap mengenai layanan bandwidth fiber optik, jaminan SLA, estimasi pengerjaan website, hingga pemeliharaan sistem.
           </p>
         </div>
 
